@@ -1177,12 +1177,65 @@ togglepromo.addEventListener('click', function () {
     const itemsPerPagePromo = 4; // Nombre de promotions par page
     let currentPagePromo = 1; // Page actuelle pour les promotions
 
+    // function displayPromos(startIndex, endIndex) {
+    //     // Affichage des promotions de l'index de début à l'index de fin
+    //     const promos = data.promos.slice(startIndex, endIndex);
+    //     tbodypromo.innerHTML = ''; // Efface le contenu actuel du tableau
+
+    //     promos.forEach((promo) => {
+    //         const newRow = document.createElement('tr');
+    //         newRow.classList.add('line');
+    //         newRow.classList.add('donneepromo');
+    //         newRow.innerHTML = `
+    //         <td class="bloc">
+    //           <div class="col-bas">${promo.nompromo}</div>
+    //         </td>
+    //         <td class="bloc">
+    //           <div class="col-bas">${promo.datedebut}</div>
+    //         </td>
+    //         <td class="bloc">
+    //           <div class="col-bas">${promo.datefin}</div>
+    //         </td>
+    //         <td class="bloc">
+    //           <div class="col-bas etatpromo">${promo.etatpromo}</div>
+    //         </td>
+    //     `;
+    //         tbodypromo.appendChild(newRow);
+
+    //         // Ajoute l'événement au clic sur l'état de la promo
+    //         document.addEventListener('click', function (event) {
+    //             if (event.target.classList.contains('etatpromo')) {
+    //                 const promoCell = event.target;
+    //                 const promoRow = promoCell.closest('.donneepromo');
+    //                 const promos = document.querySelectorAll('.donneepromo');
+
+    //                 // Vérifie si la promotion est déjà active
+    //                 if (promoCell.textContent.trim() === 'Désactivée') {
+    //                     // Parcourt toutes les promotions pour les désactiver
+    //                     promos.forEach(function (row) {
+    //                         row.querySelector('.etatpromo').textContent = 'Désactivée';
+    //                         // Active la promotion sur laquelle l'utilisateur a cliqué
+    //                         promoCell.textContent = 'Activée';
+    //                         // Enregistre l'etat de la promo
+    //                         promo.etatpromo = 'Activée';
+                            
+    //                         // Change l'état de la promo de 'Désactivée' à 'Activée'
+    //                         promoRow.classList.toggle('active-promo');
+    //                     });
+                        
+                        
+    //                 }
+    //             }
+    //         });
+    //     });
+    // }
+
     function displayPromos(startIndex, endIndex) {
         // Affichage des promotions de l'index de début à l'index de fin
         const promos = data.promos.slice(startIndex, endIndex);
         tbodypromo.innerHTML = ''; // Efface le contenu actuel du tableau
-
-        promos.forEach((promo) => {
+    
+        promos.forEach((promo, index) => {
             const newRow = document.createElement('tr');
             newRow.classList.add('line');
             newRow.classList.add('donneepromo');
@@ -1201,34 +1254,22 @@ togglepromo.addEventListener('click', function () {
             </td>
         `;
             tbodypromo.appendChild(newRow);
-
+    
             // Ajoute l'événement au clic sur l'état de la promo
-            document.addEventListener('click', function (event) {
-                if (event.target.classList.contains('etatpromo')) {
-                    const promoCell = event.target;
-                    const promoRow = promoCell.closest('.donneepromo');
-                    const promos = document.querySelectorAll('.donneepromo');
-
-                    // Vérifie si la promotion est déjà active
-                    if (promoCell.textContent.trim() === 'Désactivée') {
-                        // Parcourt toutes les promotions pour les désactiver
-                        promos.forEach(function (row) {
-                            row.querySelector('.etatpromo').textContent = 'Désactivée';
-                        });
-                        // Active la promotion sur laquelle l'utilisateur a cliqué
-                        promoCell.textContent = 'Activée';
-                        // Enregistre l'etat de la promo
-                        promo.etatpromo = 'Activée';
-
-                        // Change l'état de la promo de 'Désactivée' à 'Activée'
-                        promoRow.classList.toggle('active-promo');
-                        
-                        
-                    }
-                }
+            newRow.querySelector('.etatpromo').addEventListener('click', function () {
+                // Vérifie si la promotion est déjà activée
+                if (promo.etatpromo === 'Désactivée') {
+                    // Parcourt toutes les promotions pour les désactiver
+                    data.promos.forEach(p => p.etatpromo = 'Désactivée');
+                    // Active la promotion sur laquelle l'utilisateur a cliqué
+                    promo.etatpromo = 'Activée';
+                } 
+                // Met à jour l'affichage des promotions
+                displayPromos(startIndex, endIndex);
             });
         });
     }
+    
 
     function updatePaginationButtonsPromo() {
         const totalPromos = data.promos.length;
