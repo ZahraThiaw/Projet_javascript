@@ -217,10 +217,11 @@ function addApprenant() {
         date_naissance: date_naissance.value,
         lieu_naissance: lieu_naissance.value,
         cni: cni.value,
-        referentiel: referentiel.value,
+        referentiel: referentiel1.value,
         promo: promo.value
     }
     data.apprenants.push(newApprenant);
+     console.log(newApprenant);
 }
 // fonction pour afficher les apprenants dans le tableau
 // function afficherApprenants() {
@@ -275,10 +276,10 @@ form.addEventListener('submit', function (event) {
     const date_naissance = document.getElementById('date_naissance').value;
     const lieu_naissance = document.getElementById('lieu_naissance').value;
     const cni = document.getElementById('cni').value;
-    const referentiel = document.getElementById('referentiel1').value;
+    const referentiel1 = document.getElementById('referentiel1').value;
     const promo = document.getElementById('promo').value;
 
-    console.log(image);
+    console.log(referentiel1);
 
 
     // Validation du formulaire
@@ -309,7 +310,7 @@ form.addEventListener('submit', function (event) {
                 <div class="col-bas telephoneapprenant">${telephone}</div>
             </td>
             <td class="bloc">
-                <div class="col-bas referentielapprenant">${referentiel}</div>
+                <div class="col-bas referentielapprenant">${referentiel1}</div>
             </td>
             <td class="bloc">
                 <div class="col-haut"></div>
@@ -1175,8 +1176,7 @@ togglepromo.addEventListener('click', function () {
             if (btnaddpromo.textContent != 'Modifier') {
 
                 data.promos.push(promo);
-                formpromo.reset();
-
+                
                 nompromo.value = '';
                 datedebut.value = '';
                 datefin.value = '';
@@ -1184,6 +1184,8 @@ togglepromo.addEventListener('click', function () {
                 afficherPromos();
                 goToPagePromo(1);
             }
+            formpromo.reset();
+            
         }
 
     });
