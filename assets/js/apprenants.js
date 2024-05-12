@@ -16,10 +16,12 @@ close.addEventListener('click', function () {
     modal.style.display = 'none';
 })
 
-//Récuperation du lien de l'image
-const imageInput = document.getElementById('image'); // Remplacez 'imageInput' par l'ID réel de votre input
-const imageLink = imageInput.value;
-const imageaperçu = document.getElementById('img');
+// //Récuperation du lien de l'image
+// const imageInput = document.getElementById('image'); // Remplacez 'imageInput' par l'ID réel de votre input
+// const imageLink = imageInput.value;
+// console.log(imageLink);
+// const imageaperçu = document.getElementById('studentImage');
+// imageaperçu.src = imageLink;
 
 
 
@@ -34,7 +36,7 @@ const data = {
             email: 'johndO1@gmail.com',
             telephone: '770606060',
             sexe: 'Masculin',
-            dateNaissance: '01/01/1988',
+            date_naissance: '1988-01-01',
             lieu_naissance: 'Paris',
             cni: '1234256781924',
             referentiel: 'Dev Web /mobile',
@@ -48,7 +50,7 @@ const data = {
             email: 'HkUO1@example.com',
             telephone: '0606060606',
             sexe: 'Feminin',
-            dateNaissance: '01/01/2001',
+            date_naissance: '2001-01-01',
             lieu_naissance: 'Paris',
             cni: '1234256781924',
             referentiel: 'Référent Digital',
@@ -62,7 +64,7 @@ const data = {
             email: 'johndO1@gmail.com',
             telephone: '760606060',
             sexe: 'Masculin',
-            dateNaissance: '01/01/1999',
+            date_naissance: '1999-05-03',
             lieu_naissance: 'Paris',
             cni: '1234256781924',
             referentiel: 'Hackeuse',
@@ -77,7 +79,7 @@ const data = {
             email: 'HkUO1@example.com',
             telephone: '0606060606',
             sexe: 'Masculin',
-            dateNaissance: '01/01/1988',
+            date_naissance: '1988-07-21',
             lieu_naissance: 'Paris',
             cni: '1234256781924',
             referentiel: 'Dev Web /mobile',
@@ -91,7 +93,7 @@ const data = {
             email: 'smariedO1@gmail.com',
             telephone: '768606060',
             sexe: 'Feminin',
-            dateNaissance: '01/01/2000',
+            date_naissance: '2000-12-01',
             lieu_naissance: 'Paris',
             cni: '1234256781924',
             referentiel: 'Hackeuse',
@@ -106,7 +108,7 @@ const data = {
             email: 'HkUO1@example.com',
             telephone: '780606860',
             sexe: 'Masculin',
-            dateNaissance: '01/01/1999',
+            date_naissance: '1999-05-03',
             lieu_naissance: 'Paris',
             cni: '1234256781924',
             referentiel: 'Dev Data',
@@ -120,7 +122,7 @@ const data = {
             email: 'johndO1@example.com',
             telephone: '760606060',
             sexe: 'Masculin',
-            dateNaissance: '01/01/1988',
+            date_naissance: '1988-01-01',
             lieu_naissance: 'Paris',
             cni: '1234256781924',
             referentiel: 'Dev Web /mobile',
@@ -159,43 +161,43 @@ const data = {
         {
             idpromo: 1,
             nompromo: 'Promotion 1',
-            datedebut: '01/10/2018',
-            datefin: '01/05/2019',
+            datedebut: '2018-10-01',
+            datefin: '2019-05-01',
             etatpromo: 'Désactivée'
         },
         {
             idpromo: 2,
             nompromo: 'Promotion 2',
-            datedebut: '01/10/2019',
-            datefin: '01/05/2020',
+            datedebut: '2019-10-01',
+            datefin: '2020-05-01',
             etatpromo: 'Désactivée'
         },
         {
             idpromo: 3,
             nompromo: 'Promotion 3',
-            datedebut: '01/10/2020',
-            datefin: '01/05/2021',
+            datedebut: '2020-10-01',
+            datefin: '2021-05-01',
             etatpromo: 'Désactivée'
         },
         {
             idpromo: 4,
             nompromo: 'Promotion 4',
-            datedebut: '01/10/2021',
-            datefin: '01/05/2022',
+            datedebut: '2021-10-01',
+            datefin: '2022-05-01',
             etatpromo: 'Désactivée'
         },
         {
             idpromo: 5,
             nompromo: 'Promotion 5',
-            datedebut: '01/10/2022',
-            datefin: '01/05/2023',
+            datedebut: '2022-10-01',
+            datefin: '2023-05-01',
             etatpromo: 'Désactivée'
         },
         {
             idpromo: 6,
             nompromo: 'Promotion 6',
-            datedebut: '01/02/2024',
-            datefin: '01/12/2024',
+            datedebut: '2024-02-01',
+            datefin: '2024-12-01',
             etatpromo: 'Activée'
         }
     ]
@@ -212,7 +214,7 @@ function addApprenant() {
         email: email.value,
         telephone: telephone.value,
         sexe: sexe.value,
-        dateNaissance: dateNaissance.value,
+        date_naissance: date_naissance.value,
         lieu_naissance: lieu_naissance.value,
         cni: cni.value,
         referentiel: referentiel.value,
@@ -270,14 +272,17 @@ form.addEventListener('submit', function (event) {
     const email = document.getElementById('email').value;
     const telephone = document.getElementById('telephone').value;
     const sexe = document.getElementById('sexe').value;
-    const dateNaissance = document.getElementById('dateNaissance').value;
+    const date_naissance = document.getElementById('date_naissance').value;
     const lieu_naissance = document.getElementById('lieu_naissance').value;
     const cni = document.getElementById('cni').value;
     const referentiel = document.getElementById('referentiel1').value;
     const promo = document.getElementById('promo').value;
 
+    console.log(image);
+
+
     // Validation du formulaire
-    if (validateForm(image, nom, prenom, email, dateNaissance, lieu_naissance, cni, telephone)) {
+    if (validateForm(image, nom, prenom, email, date_naissance, lieu_naissance, cni, telephone)) {
         // Si le formulaire est valide, continuer avec la création de la nouvelle ligne dans le tableau
         const newRow = document.createElement('tr');
         newRow.setAttribute('id', data.apprenants.length + 1);
@@ -319,14 +324,13 @@ form.addEventListener('submit', function (event) {
             tbody.appendChild(newRow);
             addApprenant();
             goToPage(1);
-
+            
         }
-
-        // Reinitialisation du formulaire
-        form.reset();
-
-        // Fermer le formulaire
-        modal.style.display = 'none';
+            // Reinitialisation du formulaire
+            form.reset();
+            
+            // Fermer le formulaire
+            modal.style.display = 'none';
     }
 });
 
@@ -409,8 +413,8 @@ function validateTelephone(telephone) {
 }
 
 // Fonction de validation de la date de naissance
-function validateDateNaissance(dateNaissance) {
-    const isValidDate = !isNaN(Date.parse(dateNaissance));
+function validateDateNaissance(date_naissance) {
+    const isValidDate = !isNaN(Date.parse(date_naissance));
     if (!isValidDate) {
         document.getElementById('dateNaissanceError').textContent = 'Veuillez entrer une date de naissance valide.';
         return false;
@@ -446,13 +450,13 @@ function validateCNI(cni) {
 }
 
 // Fonction de validation globale du formulaire
-function validateForm(image, nom, prenom, email, dateNaissance, lieuNaissance, cni, telephone) {
+function validateForm(image, nom, prenom, email, date_naissance, lieuNaissance, cni, telephone) {
     const validImage = validateImage(image);
     const validNom = validateNom(nom);
     const validPrenom = validatePrenom(prenom);
     const validEmail = validateEmail(email);
     const validTelephone = validateTelephone(telephone);
-    const validDateNaissance = validateDateNaissance(dateNaissance);
+    const validDateNaissance = validateDateNaissance(date_naissance);
     const validLieuNaissance = validateLieuNaissance(lieuNaissance);
     const validCNI = validateCNI(cni);
 
@@ -558,6 +562,152 @@ function displayApprenants(startIndex, endIndex) {
             });
         });
 
+        const nomapprenant = document.querySelectorAll('.nomapprenant');
+        nomapprenant.forEach((nom) => {
+            nom.addEventListener('dblclick', function (event) {
+                const nomTexte = event.target;
+                console.log(nomTexte);
+                event.target.contentEditable = true;
+                event.target.focus();
+
+                event.target.addEventListener('blur', function () {
+                    event.target.contentEditable = false;
+
+                    // Enregistrer les modifications dans le tableau des apprenants
+                    const index = event.target.parentNode.parentNode.id;
+                    console.log(index);
+                    data.apprenants.forEach((apprenant) => {
+                        if (apprenant.idapprenant == index) {
+                            apprenant.nom = nomTexte.textContent;
+                        }
+                    })
+                })
+
+
+            });
+        });
+
+        const prenomapprenant = document.querySelectorAll('.prenomapprenant');
+        prenomapprenant.forEach((prenom) => {
+            prenom.addEventListener('dblclick', function (event) {
+                const nomTexte = event.target;
+                console.log(nomTexte);
+                event.target.contentEditable = true;
+                event.target.focus();
+
+                event.target.addEventListener('blur', function () {
+                    event.target.contentEditable = false;
+
+                    // Enregistrer les modifications dans le tableau des apprenants
+                    const index = event.target.parentNode.parentNode.id;
+                    console.log(index);
+                    data.apprenants.forEach((apprenant) => {
+                        if (apprenant.idapprenant == index) {
+                            apprenant.prenom = nomTexte.textContent;
+                        }
+                    })
+                })
+
+            });
+        });
+
+        const emailapprenant = document.querySelectorAll('.emailapprenant');
+        emailapprenant.forEach((email) => {
+            email.addEventListener('dblclick', function (event) {
+                const nomTexte = event.target;
+                console.log(nomTexte);
+                event.target.contentEditable = true;
+                event.target.focus();
+
+                event.target.addEventListener('blur', function () {
+                    event.target.contentEditable = false;
+
+                    // Enregistrer les modifications dans le tableau des apprenants
+                    const index = event.target.parentNode.parentNode.id;
+                    console.log(index);
+                    data.apprenants.forEach((apprenant) => {
+                        if (apprenant.idapprenant == index) {
+                            apprenant.email = nomTexte.textContent;
+                        }
+                    })
+                })
+
+            });
+        });
+
+        const sexeapprenant = document.querySelectorAll('.sexeapprenant');
+        sexeapprenant.forEach((sexe) => {
+            sexe.addEventListener('dblclick', function (event) {
+                const nomTexte = event.target;
+                console.log(nomTexte);
+                event.target.contentEditable = true;
+                event.target.focus();
+
+                event.target.addEventListener('blur', function () {
+                    event.target.contentEditable = false;
+
+                    // Enregistrer les modifications dans le tableau des apprenants
+                    const index = event.target.parentNode.parentNode.id;
+                    console.log(index);
+                    data.apprenants.forEach((apprenant) => {
+                        if (apprenant.idapprenant == index) {
+                            apprenant.sexe = nomTexte.textContent;
+                        }
+                    })
+                })
+
+            });
+        });
+
+        const telephoneapprenant = document.querySelectorAll('.telephoneapprenant');
+        telephoneapprenant.forEach((telephone) => {
+            telephone.addEventListener('dblclick', function (event) {
+                const nomTexte = event.target;
+                console.log(nomTexte);
+                event.target.contentEditable = true;
+                event.target.focus();
+
+                event.target.addEventListener('blur', function () {
+                    event.target.contentEditable = false;
+
+                    // Enregistrer les modifications dans le tableau des apprenants
+                    const index = event.target.parentNode.parentNode.id;
+                    console.log(index);
+                    data.apprenants.forEach((apprenant) => {
+                        if (apprenant.idapprenant == index) {
+                            apprenant.telephone = nomTexte.textContent;
+                        }
+                    })
+                })
+
+            });
+        });
+
+        const referentielapprenant = document.querySelectorAll('.referentielapprenant');
+        referentielapprenant.forEach((referentiel) => {
+            referentiel.addEventListener('dblclick', function (event) {
+                const nomTexte = event.target;
+                console.log(nomTexte);
+                event.target.contentEditable = true;
+                event.target.focus();
+
+                event.target.addEventListener('blur', function () {
+                    event.target.contentEditable = false;
+
+                    // Enregistrer les modifications dans le tableau des apprenants
+                    const index = event.target.parentNode.parentNode.id;
+                    console.log(index);
+                    data.apprenants.forEach((apprenant) => {
+                        if (apprenant.idapprenant == index) {
+                            apprenant.referentiel = nomTexte.textContent;
+                        }
+                    })
+                })
+
+            });
+        });
+
+
         const btnEdit = document.querySelectorAll('.btnEdit');
         // Afficher le popup de modification d'un apprenant quand on clique sur le bouton Modifier
 
@@ -577,7 +727,7 @@ function displayApprenants(startIndex, endIndex) {
                         const email = document.querySelector('#email');
                         const telephone = document.querySelector('#telephone');
                         const sexe = document.querySelector('#sexe');
-                        const dateNaissance = document.querySelector('#dateNaissance');
+                        const date_naissance = document.querySelector('#date_naissance');
                         const lieu_naissance = document.querySelector('#lieu_naissance');
                         const cni = document.querySelector('#cni');
                         const referentiel = document.querySelector('#referentiel1');
@@ -589,12 +739,11 @@ function displayApprenants(startIndex, endIndex) {
                         email.value = apprenant.email;
                         telephone.value = apprenant.telephone;
                         sexe.value = apprenant.sexe;
-                        dateNaissance.value = apprenant.dateNaissance;
+                        date_naissance.value = apprenant.date_naissance;
                         lieu_naissance.value = apprenant.lieu_naissance;
                         cni.value = apprenant.cni;
                         referentiel.value = apprenant.referentiel;
                         promo.value = apprenant.promo;
-
 
                         createApprenant.textContent = "Modifier l'apprenant";
 
@@ -606,12 +755,13 @@ function displayApprenants(startIndex, endIndex) {
                             apprenant.email = email.value;
                             apprenant.telephone = telephone.value;
                             apprenant.sexe = sexe.value;
-                            apprenant.dateNaissance = dateNaissance.value;
+                            apprenant.date_naissance = date_naissance.value;
                             apprenant.lieu_naissance = lieu_naissance.value;
                             apprenant.cni = cni.value;
                             apprenant.referentiel = referentiel.value;
                             apprenant.promo = promo.value;
 
+                            // Fermer le formulaire
                             modal.style.display = 'none';
 
                             // Rafraîchir l'affichage des apprenants
@@ -703,154 +853,6 @@ searchapprenant.addEventListener('input', () => {
         }
     });
 })
-
-
-const nomapprenant = document.querySelectorAll('.nomapprenant');
-const prenomapprenant = document.querySelectorAll('.prenomapprenant');
-const emailapprenant = document.querySelectorAll('.emailapprenant');
-const sexeapprenant = document.querySelectorAll('.sexeapprenant');
-const telephoneapprenant = document.querySelectorAll('.telephoneapprenant');
-const referentielapprenant = document.querySelectorAll('.referentielapprenant');
-
-nomapprenant.forEach((nom) => {
-    nom.addEventListener('dblclick', function (event) {
-        const nomTexte = event.target;
-        console.log(nomTexte);
-        event.target.contentEditable = true;
-        event.target.focus();
-
-        event.target.addEventListener('blur', function () {
-            event.target.contentEditable = false;
-
-            // Enregistrer les modifications dans le tableau des apprenants
-            const index = event.target.parentNode.parentNode.id;
-            console.log(index);
-            data.apprenants.forEach((apprenant) => {
-                if (apprenant.idapprenant == index) {
-                    apprenant.nom = nomTexte.textContent;
-                }
-            })
-        })
-
-
-    });
-});
-
-prenomapprenant.forEach((prenom) => {
-    prenom.addEventListener('dblclick', function (event) {
-        const nomTexte = event.target;
-        console.log(nomTexte);
-        event.target.contentEditable = true;
-        event.target.focus();
-
-        event.target.addEventListener('blur', function () {
-            event.target.contentEditable = false;
-
-            // Enregistrer les modifications dans le tableau des apprenants
-            const index = event.target.parentNode.parentNode.id;
-            console.log(index);
-            data.apprenants.forEach((apprenant) => {
-                if (apprenant.idapprenant == index) {
-                    apprenant.prenom = nomTexte.textContent;
-                }
-            })
-        })
-
-    });
-});
-
-emailapprenant.forEach((email) => {
-    email.addEventListener('dblclick', function (event) {
-        const nomTexte = event.target;
-        console.log(nomTexte);
-        event.target.contentEditable = true;
-        event.target.focus();
-
-        event.target.addEventListener('blur', function () {
-            event.target.contentEditable = false;
-
-            // Enregistrer les modifications dans le tableau des apprenants
-            const index = event.target.parentNode.parentNode.id;
-            console.log(index);
-            data.apprenants.forEach((apprenant) => {
-                if (apprenant.idapprenant == index) {
-                    apprenant.email = nomTexte.textContent;
-                }
-            })
-        })
-
-    });
-});
-
-sexeapprenant.forEach((sexe) => {
-    sexe.addEventListener('dblclick', function (event) {
-        const nomTexte = event.target;
-        console.log(nomTexte);
-        event.target.contentEditable = true;
-        event.target.focus();
-
-        event.target.addEventListener('blur', function () {
-            event.target.contentEditable = false;
-
-            // Enregistrer les modifications dans le tableau des apprenants
-            const index = event.target.parentNode.parentNode.id;
-            console.log(index);
-            data.apprenants.forEach((apprenant) => {
-                if (apprenant.idapprenant == index) {
-                    apprenant.sexe = nomTexte.textContent;
-                }
-            })
-        })
-
-    });
-});
-
-telephoneapprenant.forEach((telephone) => {
-    telephone.addEventListener('dblclick', function (event) {
-        const nomTexte = event.target;
-        console.log(nomTexte);
-        event.target.contentEditable = true;
-        event.target.focus();
-
-        event.target.addEventListener('blur', function () {
-            event.target.contentEditable = false;
-
-            // Enregistrer les modifications dans le tableau des apprenants
-            const index = event.target.parentNode.parentNode.id;
-            console.log(index);
-            data.apprenants.forEach((apprenant) => {
-                if (apprenant.idapprenant == index) {
-                    apprenant.telephone = nomTexte.textContent;
-                }
-            })
-        })
-
-    });
-});
-
-referentielapprenant.forEach((referentiel) => {
-    referentiel.addEventListener('dblclick', function (event) {
-        const nomTexte = event.target;
-        console.log(nomTexte);
-        event.target.contentEditable = true;
-        event.target.focus();
-
-        event.target.addEventListener('blur', function () {
-            event.target.contentEditable = false;
-
-            // Enregistrer les modifications dans le tableau des apprenants
-            const index = event.target.parentNode.parentNode.id;
-            console.log(index);
-            data.apprenants.forEach((apprenant) => {
-                if (apprenant.idapprenant == index) {
-                    apprenant.referentiel = nomTexte.textContent;
-                }
-            })
-        })
-
-    });
-});
-
 
 
 // Ajout d'un événement qui permet de filter les noms des apprenants par ordre croissant ou decroissant en cliquant sur le nom
@@ -1100,10 +1102,13 @@ const togglepromo = document.querySelector('#togglepromo');
 const containertablepromo = document.querySelector('#container-tablepromo');
 const containertable = document.querySelector('#container-table');
 const tbodypromo = document.querySelector('#tbodypromo');
+const line4 = document.querySelector('#line4');
 
 togglepromo.addEventListener('click', function () {
     containertablepromo.style.display = 'block';
     containertable.style.display = 'none';
+    line4.style.display = 'none';
+
 
     nouveauapprenant.textContent = '+ Nouvelle';
 
@@ -1125,20 +1130,22 @@ togglepromo.addEventListener('click', function () {
         const promos = data.promos;
         promos.forEach(function (promo) {
             const newRow = document.createElement('tr');
+            newRow.setAttribute('id', data.promos.length + 1);
             newRow.classList.add('line');
             newRow.classList.add('donneepromo');
             newRow.innerHTML = `
                     <td class="bloc">
-                      <div class="col-bas">${promo.nompromo}</div>
+                      <div class="col-bas nompromo">${promo.nompromo}</div>
                     </td>
                     <td class="bloc">
-                      <div class="col-bas">${promo.datedebut}</div>
+                      <div class="col-bas datedebut">${promo.datedebut}</div>
                     </td>
                     <td class="bloc">
-                      <div class="col-bas">${promo.datefin}</div>
+                      <div class="col-bas datefin">${promo.datefin}</div>
                     </td>
                     <td class="bloc">
                       <div class="col-bas etatpromo">${promo.etatpromo}</div>
+                      <div style = "margin-left: 30px;"><button type="button" class="btnEditpromo">Modifier</button></div>
                     </td>
             `;
             tbodypromo.appendChild(newRow);
@@ -1148,28 +1155,35 @@ togglepromo.addEventListener('click', function () {
     afficherPromos();
 
     const formpromo = document.querySelector('#taskForm');
+    const btnaddpromo = document.querySelector('.btnaddpromo');
 
     //fonction pour ajouter une nouvelle promo
     formpromo.addEventListener('submit', function (e) {
         e.preventDefault();
         const nompromo = document.querySelector('#nompromo').value;
-        const datedebut = document.querySelector('#datedebut').value;
-        const datefin = document.querySelector('#datefin').value;
+        const datedebut = document.querySelector('#dateDebut').value;
+        const datefin = document.querySelector('#dateFin').value;
         const promo = {
+            idpromo: data.promos.length + 1,
             nompromo: nompromo,
             datedebut: datedebut,
             datefin: datefin,
             etatpromo: 'Désactivée'
         };
         if (validateFormPromo(nompromo, datedebut, datefin)) {
-            data.promos.push(promo);
-            formpromo.reset();
 
-            nompromo.value = '';
-            datedebut.value = '';
-            datefin.value = '';
-            popupPromo.style.display = 'none';
-            afficherPromos();
+            if (btnaddpromo.textContent != 'Modifier') {
+
+                data.promos.push(promo);
+                formpromo.reset();
+
+                nompromo.value = '';
+                datedebut.value = '';
+                datefin.value = '';
+                popupPromo.style.display = 'none';
+                afficherPromos();
+                goToPagePromo(1);
+            }
         }
 
     });
@@ -1177,84 +1191,34 @@ togglepromo.addEventListener('click', function () {
     const itemsPerPagePromo = 4; // Nombre de promotions par page
     let currentPagePromo = 1; // Page actuelle pour les promotions
 
-    // function displayPromos(startIndex, endIndex) {
-    //     // Affichage des promotions de l'index de début à l'index de fin
-    //     const promos = data.promos.slice(startIndex, endIndex);
-    //     tbodypromo.innerHTML = ''; // Efface le contenu actuel du tableau
-
-    //     promos.forEach((promo) => {
-    //         const newRow = document.createElement('tr');
-    //         newRow.classList.add('line');
-    //         newRow.classList.add('donneepromo');
-    //         newRow.innerHTML = `
-    //         <td class="bloc">
-    //           <div class="col-bas">${promo.nompromo}</div>
-    //         </td>
-    //         <td class="bloc">
-    //           <div class="col-bas">${promo.datedebut}</div>
-    //         </td>
-    //         <td class="bloc">
-    //           <div class="col-bas">${promo.datefin}</div>
-    //         </td>
-    //         <td class="bloc">
-    //           <div class="col-bas etatpromo">${promo.etatpromo}</div>
-    //         </td>
-    //     `;
-    //         tbodypromo.appendChild(newRow);
-
-    //         // Ajoute l'événement au clic sur l'état de la promo
-    //         document.addEventListener('click', function (event) {
-    //             if (event.target.classList.contains('etatpromo')) {
-    //                 const promoCell = event.target;
-    //                 const promoRow = promoCell.closest('.donneepromo');
-    //                 const promos = document.querySelectorAll('.donneepromo');
-
-    //                 // Vérifie si la promotion est déjà active
-    //                 if (promoCell.textContent.trim() === 'Désactivée') {
-    //                     // Parcourt toutes les promotions pour les désactiver
-    //                     promos.forEach(function (row) {
-    //                         row.querySelector('.etatpromo').textContent = 'Désactivée';
-    //                         // Active la promotion sur laquelle l'utilisateur a cliqué
-    //                         promoCell.textContent = 'Activée';
-    //                         // Enregistre l'etat de la promo
-    //                         promo.etatpromo = 'Activée';
-                            
-    //                         // Change l'état de la promo de 'Désactivée' à 'Activée'
-    //                         promoRow.classList.toggle('active-promo');
-    //                     });
-                        
-                        
-    //                 }
-    //             }
-    //         });
-    //     });
-    // }
-
     function displayPromos(startIndex, endIndex) {
         // Affichage des promotions de l'index de début à l'index de fin
         const promos = data.promos.slice(startIndex, endIndex);
         tbodypromo.innerHTML = ''; // Efface le contenu actuel du tableau
-    
+
         promos.forEach((promo, index) => {
             const newRow = document.createElement('tr');
+            newRow.setAttribute('id', promo.idpromo);
             newRow.classList.add('line');
             newRow.classList.add('donneepromo');
             newRow.innerHTML = `
             <td class="bloc">
-              <div class="col-bas">${promo.nompromo}</div>
+              <div class="col-bas nompromo">${promo.nompromo}</div>
             </td>
             <td class="bloc">
-              <div class="col-bas">${promo.datedebut}</div>
+              <div class="col-bas datedebut">${promo.datedebut}</div>
             </td>
             <td class="bloc">
-              <div class="col-bas">${promo.datefin}</div>
+              <div class="col-bas datefin">${promo.datefin}</div>
             </td>
-            <td class="bloc">
+            <td class="bloc" style= "display: flex;">
               <div class="col-bas etatpromo">${promo.etatpromo}</div>
+              <div style = "margin-left: 30px;"><button type="button" class="btnEditpromo">Modifier</button></div>
+              
             </td>
         `;
             tbodypromo.appendChild(newRow);
-    
+
             // Ajoute l'événement au clic sur l'état de la promo
             newRow.querySelector('.etatpromo').addEventListener('click', function () {
                 // Vérifie si la promotion est déjà activée
@@ -1263,13 +1227,127 @@ togglepromo.addEventListener('click', function () {
                     data.promos.forEach(p => p.etatpromo = 'Désactivée');
                     // Active la promotion sur laquelle l'utilisateur a cliqué
                     promo.etatpromo = 'Activée';
-                } 
+                }
                 // Met à jour l'affichage des promotions
                 displayPromos(startIndex, endIndex);
             });
+
+
+            // Ajoute l'événement au clic sur le nom de la promo pour le modifier
+            const nompromo = document.querySelectorAll('.nompromo');
+            nompromo.forEach(nom => {
+                nom.addEventListener('dblclick', function (event) {
+                    const nomTexte = event.target;
+                    console.log(nomTexte);
+                    event.target.contentEditable = true;
+                    event.target.focus();
+
+                    event.target.addEventListener('blur', function () {
+                        event.target.contentEditable = false;
+
+                        // Enregistrer les modifications dans le tableau des apprenants
+                        const index = event.target.parentNode.parentNode.id;
+                        console.log(index);
+                        data.promos.forEach((promo) => {
+                            if (promo.idpromo == index) {
+                                promo.nompromo = nomTexte.textContent;
+                            }
+                        })
+                    })
+                }
+                )
+            })
+
+            const datedebut = document.querySelectorAll('.datedebut');
+            datedebut.forEach(date => {
+                date.addEventListener('dblclick', function (event) {
+                    const dateTexte = event.target;
+                    console.log(dateTexte);
+                    event.target.contentEditable = true;
+                    event.target.focus();
+
+                    event.target.addEventListener('blur', function () {
+                        event.target.contentEditable = false;
+
+                        // Enregistrer les modifications dans le tableau des apprenants
+                        const index = event.target.parentNode.parentNode.id;
+                        console.log(index);
+                        data.promos.forEach((promo) => {
+                            if (promo.idpromo == index) {
+                                promo.datedebut = dateTexte.textContent;
+                            }
+                        })
+                    })
+                }
+                )
+            })
+
+            const datefin = document.querySelectorAll('.datefin');
+            datefin.forEach(date => {
+                date.addEventListener('dblclick', function (event) {
+                    const dateTexte = event.target;
+                    console.log(dateTexte);
+                    event.target.contentEditable = true;
+                    event.target.focus();
+
+                    event.target.addEventListener('blur', function () {
+                        event.target.contentEditable = false;
+
+                        // Enregistrer les modifications dans le tableau des apprenants
+                        const index = event.target.parentNode.parentNode.id;
+                        console.log(index);
+                        data.promos.forEach((promo) => {
+                            if (promo.idpromo == index) {
+                                promo.datefin = dateTexte.textContent;
+                            }
+                        })
+                    })
+                })
+            });
+
+            const btnEditpromo = document.querySelectorAll('.btnEditpromo');
+
+            btnEditpromo.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    popupPromo.style.display = 'block';
+                    modal.style.display = 'none';
+
+                    const index = btn.parentNode.parentNode.parentNode.id;
+                    console.log(index);
+                    data.promos.forEach((promo) => {
+                        if (promo.idpromo == index) {
+
+                            const nompromo = document.getElementById('nompromo');
+                            const datedebut = document.getElementById('dateDebut');
+                            const datefin = document.getElementById('dateFin');
+
+                            nompromo.value = promo.nompromo;
+                            datedebut.value = promo.datedebut;
+                            datefin.value = promo.datefin;
+
+                            btnaddpromo.textContent = 'Modifier';
+
+                            btnaddpromo.addEventListener('click', function () {
+                                promo.nompromo = nompromo.value;
+                                promo.datedebut = datedebut.value;
+                                promo.datefin = datefin.value;
+
+                                popupPromo.style.display = 'none';
+
+                                displayPromos(startIndex, endIndex);
+
+                            });
+                        }
+
+                    })
+
+                })
+
+            });
+
         });
     }
-    
+
 
     function updatePaginationButtonsPromo() {
         const totalPromos = data.promos.length;
@@ -1321,24 +1399,108 @@ togglepromo.addEventListener('click', function () {
     // Afficher la première page de promotions au chargement
     goToPagePromo(1);
 
-    // // Ajoute l'événement au clic sur l'état de la promo
-    // document.addEventListener('click', function (event) {
-    //     if (event.target.classList.contains('etatpromo')) {
-    //         const promoCell = event.target;
-    //         const promoRow = promoCell.closest('.donneepromo');
-    //         const promos = document.querySelectorAll('.donneepromo');
 
-    //         // Vérifie si la promotion est déjà active
-    //         if (promoCell.textContent.trim() === 'Désactivée') {
-    //             // Parcourt toutes les promotions pour les désactiver
-    //             promos.forEach(function (row) {
-    //                 row.querySelector('.etatpromo').textContent = 'Désactivée';
-    //             });
-    //             // Active la promotion sur laquelle l'utilisateur a cliqué
-    //             promoCell.textContent = 'Activée';
-    //         }
-    //     }
-    // });
+    //Ajout d'un événement qui permet de filter les noms des promos par ordre croissant ou decroissant en cliquant sur le nom du promo
+    const titrenompromo = document.querySelector('.titrenompromo');
+    titrenompromo.addEventListener('click', function () {
+        // Vérifier si les noms sont triés par ordre croissant des noms
+        const isSorted = data.promos.every((nom, index) => index === 0 || data.promos[index - 1].nompromo.localeCompare(nom.nompromo) <= 0);
+        //console.log(isSorted);
+
+        // Si les noms sont triés par ordre croissant, triez-les par ordre decroissant
+        if (isSorted) {
+            data.promos.sort((a, b) => {
+                return b.nompromo.localeCompare(a.nompromo); // Triez par ordre decroissant
+            });
+        } else {
+            // Sinon, triez les noms par ordre croissant
+            data.promos.sort((a, b) => {
+                return a.nompromo.localeCompare(b.nompromo); // Triez par ordre croissant
+            });
+        }
+
+        // Afficher les noms promos mises à jour
+        const startIndex = (currentPagePromo - 1) * itemsPerPagePromo;
+        const endIndex = startIndex + itemsPerPagePromo;
+        displayPromos(startIndex, endIndex);
+        updatePaginationButtonsPromo();
+    });
+
+    const titredatedebutpromo = document.querySelector('.titredatedebutpromo');
+    titredatedebutpromo.addEventListener('click', function () {
+        // Vérifier si les noms sont triés par ordre croissant des noms
+        const isSorted = data.promos.every((datedebut, index) => index === 0 || data.promos[index - 1].datedebut.localeCompare(datedebut.datedebut) <= 0);
+        //console.log(isSorted);
+
+        // Si les noms sont triés par ordre croissant, triez-les par ordre decroissant
+        if (isSorted) {
+            data.promos.sort((a, b) => {
+                return b.datedebut.localeCompare(a.datedebut); // Triez par ordre decroissant
+            });
+        } else {
+            // Sinon, triez les noms par ordre croissant
+            data.promos.sort((a, b) => {
+                return a.datedebut.localeCompare(b.datedebut); // Triez par ordre croissant
+            });
+        }
+
+        // Afficher les dates de debut promos mises à jour
+        const startIndex = (currentPagePromo - 1) * itemsPerPagePromo;
+        const endIndex = startIndex + itemsPerPagePromo;
+        displayPromos(startIndex, endIndex);
+        updatePaginationButtonsPromo();
+    });
+
+    const titredatefinpromo = document.querySelector('.titredatefinpromo');
+    titredatefinpromo.addEventListener('click', function () {
+        // Vérifier si les noms sont triés par ordre croissant des noms
+        const isSorted = data.promos.every((datefin, index) => index === 0 || data.promos[index - 1].datefin.localeCompare(datefin.datefin) <= 0);
+        //console.log(isSorted);    
+
+        // Si les noms sont triés par ordre croissant, triez-les par ordre decroissant
+        if (isSorted) {
+            data.promos.sort((a, b) => {
+                return b.datefin.localeCompare(a.datefin); // Triez par ordre decroissant
+            });
+        } else {
+            // Sinon, triez les noms par ordre croissant
+            data.promos.sort((a, b) => {
+                return a.datefin.localeCompare(b.datefin); // Triez par ordre croissant
+            });
+        }
+
+        // Afficher les dates de fin promos mises à jour
+        const startIndex = (currentPagePromo - 1) * itemsPerPagePromo;
+        const endIndex = startIndex + itemsPerPagePromo;
+        displayPromos(startIndex, endIndex);
+        updatePaginationButtonsPromo();
+    });
+
+    const titreetatpromo = document.querySelector('.titreetatpromo');
+    titreetatpromo.addEventListener('click', function () {
+        // Vérifier si les noms sont triés par ordre croissant des noms
+        const isSorted = data.promos.every((etat, index) => index === 0 || data.promos[index - 1].etatpromo.localeCompare(etat.etatpromo) <= 0);
+        //console.log(isSorted);
+
+        // Si les noms sont triés par ordre croissant, triez-les par ordre decroissant
+        if (isSorted) {
+            data.promos.sort((a, b) => {
+                return b.etatpromo.localeCompare(a.etatpromo); // Triez par ordre decroissant
+            });
+        } else {
+            // Sinon, triez les noms par ordre croissant
+            data.promos.sort((a, b) => {
+                return a.etatpromo.localeCompare(b.etatpromo); // Triez par ordre croissant
+            });
+        }
+
+        // Afficher les etats promos mises à jour
+        const startIndex = (currentPagePromo - 1) * itemsPerPagePromo;
+        const endIndex = startIndex + itemsPerPagePromo;
+        displayPromos(startIndex, endIndex);
+        updatePaginationButtonsPromo();
+    });
+
 
 
 

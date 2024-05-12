@@ -181,10 +181,10 @@
             <table class="line5" id="tablePromo" style="width: 100%;" >
               <thead>
                 <tr>
-                  <th class="titre" data-label="Libelle">Promos</th>
-                  <th class="titre" data-label="date-debut">Date Début</th>
-                  <th class="titre" data-label="date-fin">Date FIn</th>
-                  <th class="titre" data-label="Actions">Actions</th>
+                  <th class="titre titrenompromo" data-label="Libelle">Promos</th>
+                  <th class="titre titredatedebutpromo" data-label="date-debut">Date Début</th>
+                  <th class="titre titredatefinpromo" data-label="date-fin">Date FIn</th>
+                  <th class="titre titreetatpromo" data-label="Actions">Actions</th>
                 </tr>
               </thead>
               <tbody id="tbodypromo">
@@ -272,8 +272,8 @@
               </select>
             </div>
             <div class="contentapprenant date-input-container">
-              <label for="dateNaissance">Date de Naissance</label>
-              <input type="date" name="dateNaissance" id="dateNaissance">
+              <label for="date_naissance">Date de Naissance</label>
+              <input type="date" name="date_naissance" id="date_naissance">
               <div id="dateNaissanceError" class="error"></div>
             </div>
             <div class="contentapprenant">
@@ -299,12 +299,12 @@
             <div class="contentapprenant">
               <label for="promo">Promo</label>
               <select name="promo" id="promo">
-                <option value="promotion 1">Promotion 1</option>
-                <option value="promotion 2">Promotion 2</option>
-                <option value="promotion 3">Promotion 3</option>
-                <option value="promotion 4">Promotion 4</option>
-                <option value="promotion 5">Promotion 5</option>
-                <option value="promotion 6">Promotion 6</option>
+                <option value="Promotion 1">Promotion 1</option>
+                <option value="Promotion 2">Promotion 2</option>
+                <option value="Promotion 3">Promotion 3</option>
+                <option value="Promotion 4">Promotion 4</option>
+                <option value="Promotion 5">Promotion 5</option>
+                <option value="Promotion 6">Promotion 6</option>
               </select>
             </div>
           </div>
@@ -433,12 +433,12 @@
               </div>
               <div>
                   <label for="dateDebut">Date début =></label>
-                  <input type="date" id="datedebut" name="dateFin">
+                  <input type="date" id="dateDebut" name="dateDebut">
                   <div id="dateDebutError"></div>
               </div>
               <div>
                   <label for="dateFin">Date Fin=></label>
-                  <input type="date" id="datefin" name="dateFin">
+                  <input type="date" id="dateFin" name="dateFin">
                   <div id="dateFinError"></div>
               </div>
               <button type="submit" class="btnaddpromo">Ajouter</button>
